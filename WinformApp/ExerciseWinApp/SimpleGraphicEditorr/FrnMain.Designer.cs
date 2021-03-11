@@ -30,13 +30,13 @@ namespace SimpleGraphicEditorr
         private void InitializeComponent()
         {
             this.TlbMain = new System.Windows.Forms.ToolStrip();
-            this.StsMain = new System.Windows.Forms.StatusStrip();
             this.TlmLine = new System.Windows.Forms.ToolStripLabel();
             this.TlmRectangle = new System.Windows.Forms.ToolStripLabel();
             this.TlmCircle = new System.Windows.Forms.ToolStripLabel();
             this.TlmCurve = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.TlmColor = new System.Windows.Forms.ToolStripLabel();
+            this.StsMain = new System.Windows.Forms.StatusStrip();
             this.StsCurrent = new System.Windows.Forms.ToolStripStatusLabel();
             this.TlbMain.SuspendLayout();
             this.StsMain.SuspendLayout();
@@ -56,17 +56,6 @@ namespace SimpleGraphicEditorr
             this.TlbMain.Size = new System.Drawing.Size(682, 25);
             this.TlbMain.TabIndex = 2;
             this.TlbMain.Text = "toolStrip1";
-            // 
-            // StsMain
-            // 
-            this.StsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.StsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StsCurrent});
-            this.StsMain.Location = new System.Drawing.Point(0, 414);
-            this.StsMain.Name = "StsMain";
-            this.StsMain.Size = new System.Drawing.Size(682, 22);
-            this.StsMain.TabIndex = 3;
-            this.StsMain.Text = "statusStrip1";
             // 
             // TlmLine
             // 
@@ -108,6 +97,17 @@ namespace SimpleGraphicEditorr
             this.TlmColor.Text = "색깔";
             this.TlmColor.Click += new System.EventHandler(this.TlmColor_Click);
             // 
+            // StsMain
+            // 
+            this.StsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.StsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StsCurrent});
+            this.StsMain.Location = new System.Drawing.Point(0, 414);
+            this.StsMain.Name = "StsMain";
+            this.StsMain.Size = new System.Drawing.Size(682, 22);
+            this.StsMain.TabIndex = 3;
+            this.StsMain.Text = "statusStrip1";
+            // 
             // StsCurrent
             // 
             this.StsCurrent.Name = "StsCurrent";
@@ -127,6 +127,9 @@ namespace SimpleGraphicEditorr
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "그래픽 에디터";
             this.Load += new System.EventHandler(this.FrnMain_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FrnMain_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FrnMain_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.FrnMain_MouseUp);
             this.TlbMain.ResumeLayout(false);
             this.TlbMain.PerformLayout();
             this.StsMain.ResumeLayout(false);

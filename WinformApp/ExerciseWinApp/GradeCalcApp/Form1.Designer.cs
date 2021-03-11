@@ -32,27 +32,29 @@ namespace GradeCalcApp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
-            this.comboBox14 = new System.Windows.Forms.ComboBox();
+            this.Txt1 = new System.Windows.Forms.TextBox();
+            this.Txt2 = new System.Windows.Forms.TextBox();
+            this.Txt3 = new System.Windows.Forms.TextBox();
+            this.Txt4 = new System.Windows.Forms.TextBox();
+            this.Txt5 = new System.Windows.Forms.TextBox();
+            this.Txt6 = new System.Windows.Forms.TextBox();
+            this.Txt7 = new System.Windows.Forms.TextBox();
+            this.Cmb1 = new System.Windows.Forms.ComboBox();
+            this.Cmb2 = new System.Windows.Forms.ComboBox();
+            this.Cmb3 = new System.Windows.Forms.ComboBox();
+            this.Cmb4 = new System.Windows.Forms.ComboBox();
+            this.Cmb5 = new System.Windows.Forms.ComboBox();
+            this.Cmb6 = new System.Windows.Forms.ComboBox();
+            this.Cmb7 = new System.Windows.Forms.ComboBox();
+            this.Grd7 = new System.Windows.Forms.ComboBox();
+            this.Grd6 = new System.Windows.Forms.ComboBox();
+            this.Grd5 = new System.Windows.Forms.ComboBox();
+            this.Grd4 = new System.Windows.Forms.ComboBox();
+            this.Grd3 = new System.Windows.Forms.ComboBox();
+            this.Grd2 = new System.Windows.Forms.ComboBox();
+            this.Grd1 = new System.Windows.Forms.ComboBox();
+            this.BtnAvg = new System.Windows.Forms.Button();
+            this.TxtAvg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -60,18 +62,18 @@ namespace GradeCalcApp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(119, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "과목명";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(259, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "학점";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -79,203 +81,224 @@ namespace GradeCalcApp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(399, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 12);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.label3.Text = "성적";
             // 
-            // textBox1
+            // Txt1
             // 
-            this.textBox1.Location = new System.Drawing.Point(89, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 3;
+            this.Txt1.Location = new System.Drawing.Point(89, 74);
+            this.Txt1.Name = "Txt1";
+            this.Txt1.Size = new System.Drawing.Size(100, 21);
+            this.Txt1.TabIndex = 3;
             // 
-            // textBox2
+            // Txt2
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 4;
+            this.Txt2.Location = new System.Drawing.Point(89, 101);
+            this.Txt2.Name = "Txt2";
+            this.Txt2.Size = new System.Drawing.Size(100, 21);
+            this.Txt2.TabIndex = 4;
             // 
-            // textBox3
+            // Txt3
             // 
-            this.textBox3.Location = new System.Drawing.Point(89, 128);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 5;
+            this.Txt3.Location = new System.Drawing.Point(89, 128);
+            this.Txt3.Name = "Txt3";
+            this.Txt3.Size = new System.Drawing.Size(100, 21);
+            this.Txt3.TabIndex = 5;
             // 
-            // textBox4
+            // Txt4
             // 
-            this.textBox4.Location = new System.Drawing.Point(89, 155);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 6;
+            this.Txt4.Location = new System.Drawing.Point(89, 155);
+            this.Txt4.Name = "Txt4";
+            this.Txt4.Size = new System.Drawing.Size(100, 21);
+            this.Txt4.TabIndex = 6;
             // 
-            // textBox5
+            // Txt5
             // 
-            this.textBox5.Location = new System.Drawing.Point(89, 182);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 7;
+            this.Txt5.Location = new System.Drawing.Point(89, 182);
+            this.Txt5.Name = "Txt5";
+            this.Txt5.Size = new System.Drawing.Size(100, 21);
+            this.Txt5.TabIndex = 7;
             // 
-            // textBox6
+            // Txt6
             // 
-            this.textBox6.Location = new System.Drawing.Point(89, 209);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 8;
+            this.Txt6.Location = new System.Drawing.Point(89, 209);
+            this.Txt6.Name = "Txt6";
+            this.Txt6.Size = new System.Drawing.Size(100, 21);
+            this.Txt6.TabIndex = 8;
+            this.Txt6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox7
+            // Txt7
             // 
-            this.textBox7.Location = new System.Drawing.Point(89, 236);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 21);
-            this.textBox7.TabIndex = 9;
+            this.Txt7.Location = new System.Drawing.Point(89, 236);
+            this.Txt7.Name = "Txt7";
+            this.Txt7.Size = new System.Drawing.Size(100, 21);
+            this.Txt7.TabIndex = 9;
             // 
-            // comboBox1
+            // Cmb1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(216, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 10;
+            this.Cmb1.FormattingEnabled = true;
+            this.Cmb1.Location = new System.Drawing.Point(216, 74);
+            this.Cmb1.Name = "Cmb1";
+            this.Cmb1.Size = new System.Drawing.Size(121, 20);
+            this.Cmb1.TabIndex = 10;
             // 
-            // comboBox2
+            // Cmb2
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(216, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 20);
-            this.comboBox2.TabIndex = 11;
+            this.Cmb2.FormattingEnabled = true;
+            this.Cmb2.Location = new System.Drawing.Point(216, 101);
+            this.Cmb2.Name = "Cmb2";
+            this.Cmb2.Size = new System.Drawing.Size(121, 20);
+            this.Cmb2.TabIndex = 11;
             // 
-            // comboBox3
+            // Cmb3
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(216, 128);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
-            this.comboBox3.TabIndex = 12;
+            this.Cmb3.FormattingEnabled = true;
+            this.Cmb3.Location = new System.Drawing.Point(216, 128);
+            this.Cmb3.Name = "Cmb3";
+            this.Cmb3.Size = new System.Drawing.Size(121, 20);
+            this.Cmb3.TabIndex = 12;
             // 
-            // comboBox4
+            // Cmb4
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(216, 155);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 20);
-            this.comboBox4.TabIndex = 13;
+            this.Cmb4.FormattingEnabled = true;
+            this.Cmb4.Location = new System.Drawing.Point(216, 155);
+            this.Cmb4.Name = "Cmb4";
+            this.Cmb4.Size = new System.Drawing.Size(121, 20);
+            this.Cmb4.TabIndex = 13;
             // 
-            // comboBox5
+            // Cmb5
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(216, 182);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 20);
-            this.comboBox5.TabIndex = 14;
+            this.Cmb5.FormattingEnabled = true;
+            this.Cmb5.Location = new System.Drawing.Point(216, 182);
+            this.Cmb5.Name = "Cmb5";
+            this.Cmb5.Size = new System.Drawing.Size(121, 20);
+            this.Cmb5.TabIndex = 14;
             // 
-            // comboBox6
+            // Cmb6
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(216, 209);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 20);
-            this.comboBox6.TabIndex = 15;
-            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            this.Cmb6.FormattingEnabled = true;
+            this.Cmb6.Location = new System.Drawing.Point(216, 209);
+            this.Cmb6.Name = "Cmb6";
+            this.Cmb6.Size = new System.Drawing.Size(121, 20);
+            this.Cmb6.TabIndex = 15;
+            this.Cmb6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
-            // comboBox7
+            // Cmb7
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(216, 236);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(121, 20);
-            this.comboBox7.TabIndex = 16;
+            this.Cmb7.FormattingEnabled = true;
+            this.Cmb7.Location = new System.Drawing.Point(216, 236);
+            this.Cmb7.Name = "Cmb7";
+            this.Cmb7.Size = new System.Drawing.Size(121, 20);
+            this.Cmb7.TabIndex = 16;
             // 
-            // comboBox8
+            // Grd7
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(361, 236);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(121, 20);
-            this.comboBox8.TabIndex = 23;
+            this.Grd7.FormattingEnabled = true;
+            this.Grd7.Location = new System.Drawing.Point(361, 236);
+            this.Grd7.Name = "Grd7";
+            this.Grd7.Size = new System.Drawing.Size(121, 20);
+            this.Grd7.TabIndex = 23;
             // 
-            // comboBox9
+            // Grd6
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(361, 209);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(121, 20);
-            this.comboBox9.TabIndex = 22;
+            this.Grd6.FormattingEnabled = true;
+            this.Grd6.Location = new System.Drawing.Point(361, 209);
+            this.Grd6.Name = "Grd6";
+            this.Grd6.Size = new System.Drawing.Size(121, 20);
+            this.Grd6.TabIndex = 22;
             // 
-            // comboBox10
+            // Grd5
             // 
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.Location = new System.Drawing.Point(361, 182);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(121, 20);
-            this.comboBox10.TabIndex = 21;
+            this.Grd5.FormattingEnabled = true;
+            this.Grd5.Location = new System.Drawing.Point(361, 182);
+            this.Grd5.Name = "Grd5";
+            this.Grd5.Size = new System.Drawing.Size(121, 20);
+            this.Grd5.TabIndex = 21;
             // 
-            // comboBox11
+            // Grd4
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(361, 155);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(121, 20);
-            this.comboBox11.TabIndex = 20;
+            this.Grd4.FormattingEnabled = true;
+            this.Grd4.Location = new System.Drawing.Point(361, 155);
+            this.Grd4.Name = "Grd4";
+            this.Grd4.Size = new System.Drawing.Size(121, 20);
+            this.Grd4.TabIndex = 20;
             // 
-            // comboBox12
+            // Grd3
             // 
-            this.comboBox12.FormattingEnabled = true;
-            this.comboBox12.Location = new System.Drawing.Point(361, 128);
-            this.comboBox12.Name = "comboBox12";
-            this.comboBox12.Size = new System.Drawing.Size(121, 20);
-            this.comboBox12.TabIndex = 19;
+            this.Grd3.FormattingEnabled = true;
+            this.Grd3.Location = new System.Drawing.Point(361, 128);
+            this.Grd3.Name = "Grd3";
+            this.Grd3.Size = new System.Drawing.Size(121, 20);
+            this.Grd3.TabIndex = 19;
             // 
-            // comboBox13
+            // Grd2
             // 
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(361, 101);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(121, 20);
-            this.comboBox13.TabIndex = 18;
+            this.Grd2.FormattingEnabled = true;
+            this.Grd2.Location = new System.Drawing.Point(361, 101);
+            this.Grd2.Name = "Grd2";
+            this.Grd2.Size = new System.Drawing.Size(121, 20);
+            this.Grd2.TabIndex = 18;
             // 
-            // comboBox14
+            // Grd1
             // 
-            this.comboBox14.FormattingEnabled = true;
-            this.comboBox14.Location = new System.Drawing.Point(361, 74);
-            this.comboBox14.Name = "comboBox14";
-            this.comboBox14.Size = new System.Drawing.Size(121, 20);
-            this.comboBox14.TabIndex = 17;
+            this.Grd1.FormattingEnabled = true;
+            this.Grd1.Location = new System.Drawing.Point(361, 74);
+            this.Grd1.Name = "Grd1";
+            this.Grd1.Size = new System.Drawing.Size(121, 20);
+            this.Grd1.TabIndex = 17;
+            // 
+            // BtnAvg
+            // 
+            this.BtnAvg.Location = new System.Drawing.Point(216, 262);
+            this.BtnAvg.Name = "BtnAvg";
+            this.BtnAvg.Size = new System.Drawing.Size(121, 39);
+            this.BtnAvg.TabIndex = 24;
+            this.BtnAvg.Text = "평균성적";
+            this.BtnAvg.UseVisualStyleBackColor = true;
+            this.BtnAvg.Click += new System.EventHandler(this.BtnAvg_Click);
+            // 
+            // TxtAvg
+            // 
+            this.TxtAvg.Location = new System.Drawing.Point(361, 275);
+            this.TxtAvg.Name = "TxtAvg";
+            this.TxtAvg.Size = new System.Drawing.Size(121, 21);
+            this.TxtAvg.TabIndex = 25;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 440);
-            this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.comboBox9);
-            this.Controls.Add(this.comboBox10);
-            this.Controls.Add(this.comboBox11);
-            this.Controls.Add(this.comboBox12);
-            this.Controls.Add(this.comboBox13);
-            this.Controls.Add(this.comboBox14);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(514, 313);
+            this.Controls.Add(this.TxtAvg);
+            this.Controls.Add(this.BtnAvg);
+            this.Controls.Add(this.Grd7);
+            this.Controls.Add(this.Grd6);
+            this.Controls.Add(this.Grd5);
+            this.Controls.Add(this.Grd4);
+            this.Controls.Add(this.Grd3);
+            this.Controls.Add(this.Grd2);
+            this.Controls.Add(this.Grd1);
+            this.Controls.Add(this.Cmb7);
+            this.Controls.Add(this.Cmb6);
+            this.Controls.Add(this.Cmb5);
+            this.Controls.Add(this.Cmb4);
+            this.Controls.Add(this.Cmb3);
+            this.Controls.Add(this.Cmb2);
+            this.Controls.Add(this.Cmb1);
+            this.Controls.Add(this.Txt7);
+            this.Controls.Add(this.Txt6);
+            this.Controls.Add(this.Txt5);
+            this.Controls.Add(this.Txt4);
+            this.Controls.Add(this.Txt3);
+            this.Controls.Add(this.Txt2);
+            this.Controls.Add(this.Txt1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,27 +309,29 @@ namespace GradeCalcApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox9;
-        private System.Windows.Forms.ComboBox comboBox10;
-        private System.Windows.Forms.ComboBox comboBox11;
-        private System.Windows.Forms.ComboBox comboBox12;
-        private System.Windows.Forms.ComboBox comboBox13;
-        private System.Windows.Forms.ComboBox comboBox14;
+        private System.Windows.Forms.TextBox Txt1;
+        private System.Windows.Forms.TextBox Txt2;
+        private System.Windows.Forms.TextBox Txt3;
+        private System.Windows.Forms.TextBox Txt4;
+        private System.Windows.Forms.TextBox Txt5;
+        private System.Windows.Forms.TextBox Txt6;
+        private System.Windows.Forms.TextBox Txt7;
+        private System.Windows.Forms.ComboBox Cmb1;
+        private System.Windows.Forms.ComboBox Cmb2;
+        private System.Windows.Forms.ComboBox Cmb3;
+        private System.Windows.Forms.ComboBox Cmb4;
+        private System.Windows.Forms.ComboBox Cmb5;
+        private System.Windows.Forms.ComboBox Cmb6;
+        private System.Windows.Forms.ComboBox Cmb7;
+        private System.Windows.Forms.ComboBox Grd7;
+        private System.Windows.Forms.ComboBox Grd6;
+        private System.Windows.Forms.ComboBox Grd5;
+        private System.Windows.Forms.ComboBox Grd4;
+        private System.Windows.Forms.ComboBox Grd3;
+        private System.Windows.Forms.ComboBox Grd2;
+        private System.Windows.Forms.ComboBox Grd1;
+        private System.Windows.Forms.Button BtnAvg;
+        private System.Windows.Forms.TextBox TxtAvg;
     }
 }
 
