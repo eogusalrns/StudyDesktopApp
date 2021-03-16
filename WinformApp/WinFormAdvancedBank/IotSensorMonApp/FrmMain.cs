@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -18,6 +20,9 @@ namespace IotSensorMonApp
         private Random randPhoto = new Random();
         private bool IsSimulation = false;
         private List<SensorData> sensors = new List<SensorData>();//차트,리스트박스 출력
+        private string connString = "Data Source=127.0.0.1;" +
+            "Initial Catalog=IoTData;Persist Security Info=True;" +
+            "User ID=sa;Password=mssql_p@ssw0rd!";
         private double xCount = 200;//차트에 보이는 데이터 수
         public FrmMain()
         {
@@ -95,7 +100,7 @@ namespace IotSensorMonApp
         {
             IsSimulation = true;
             timerSimul.Enabled = true;
-            timerSimul.Interval = 1000;//1second
+            timerSimul.Interval = 1000;// 1000 1second
             timerSimul.Tick += TimerSimul_tick;
             timerSimul.Start();
         }
@@ -116,6 +121,7 @@ namespace IotSensorMonApp
             var currentTime = DateTime.Now;
             SensorData data = new SensorData(currentTime, v, IsSimulation);
             sensors.Add(data);
+            InsertTable(data);
 
             //센서값 개수
             TxtSensorNumber.Text = sensors.Count.ToString();
@@ -127,6 +133,40 @@ namespace IotSensorMonApp
             LsbPhotoResistors.SelectedIndex = LsbPhotoResistors.Items.Count - 1;//스크롤 처리
             //차트에 데이터 출력
             ChtPhotoResistors.Series[0].Points.Add(v);
+            //200개 넘으면
+            ChtPhotoResistors.ChartAreas[0].AxisX.Minimum = 0;
+            ChtPhotoResistors.ChartAreas[0].AxisX.Maximum = (sensors.Count >= xCount) ? sensors.Count : xCount;
+            //zoom처리
+            if (sensors.Count > xCount)
+                ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(sensors.Count - xCount, sensors.Count);
+            else
+                ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(0, xCount);
+            //BtnDisplay 표시
+            if (IsSimulation)
+                BtnDisplay.Text = v.ToString();
+            else
+                BtnDisplay.Text = "~" + "\n" + v.ToString();
+        }
+
+        private void InsertTable(SensorData data)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
+                    var query = $"insert into Tbl_PhotoResistor " +
+                        $"(CurrentDt, Value, SimulFlag) " +
+                        $"values ('{data.Current.ToString("yyyy-MM-dd HH:mm:ss")}','{data.Value}','{(data.SimulFlag == true? "1" : "0")}');";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"예외발생 : {ex.Message}");
+            }
         }
 
         private void MnuEndSimul_Click(object sender, EventArgs e)
@@ -154,6 +194,24 @@ namespace IotSensorMonApp
                 return;
             }
             Environment.Exit(0);
+        }
+
+        private void BtnViewAll_Click(object sender, EventArgs e)
+        {
+            ChtPhotoResistors.ChartAreas[0].AxisX.Minimum = 0;
+            ChtPhotoResistors.ChartAreas[0].AxisX.Maximum = sensors.Count;
+
+            ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(0, sensors.Count);
+            ChtPhotoResistors.ChartAreas[0].AxisX.Interval = sensors.Count / 4;
+        }
+
+        private void BtnZoom_Click(object sender, EventArgs e)
+        {
+            ChtPhotoResistors.ChartAreas[0].AxisX.Minimum = 0;
+            ChtPhotoResistors.ChartAreas[0].AxisX.Maximum = sensors.Count;
+
+            ChtPhotoResistors.ChartAreas[0].AxisX.ScaleView.Zoom(sensors.Count-xCount, sensors.Count);
+            ChtPhotoResistors.ChartAreas[0].AxisX.Interval = xCount / 4;
         }
     }
 }
