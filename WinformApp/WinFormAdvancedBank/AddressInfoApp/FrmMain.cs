@@ -136,19 +136,26 @@ namespace AddressInfoApp
                 MessageBox.Show("데이터를 선택하세요");
                 return;
             }
-            using(SqlConnection conn = new SqlConnection(connString))
+
+            if( MessageBox.Show("삭제하시겠습니까?","삭제",MessageBoxButtons.YesNo,MessageBoxIcon.Question)
+                == DialogResult.Yes)
             {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
+                using (SqlConnection conn = new SqlConnection(connString))
+                {
+                    if (conn.State == ConnectionState.Closed)
+                        conn.Open();
 
-                string query = $"DELETE FROM Address WHERE idx = {result}";
+                    string query = $"DELETE FROM Address WHERE idx = {result}";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
-                if (cmd.ExecuteNonQuery() == 1)
-                    MessageBox.Show("삭제 성공");
-                else
-                    MessageBox.Show("삭제 실패");
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    if (cmd.ExecuteNonQuery() == 1)
+                        MessageBox.Show("삭제 성공");
+                    else
+                        MessageBox.Show("삭제 실패");
+                }
             }
+
+
             ClearInput();
             RefreshData();
         }
