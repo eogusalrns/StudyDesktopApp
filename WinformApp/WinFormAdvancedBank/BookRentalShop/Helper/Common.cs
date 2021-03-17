@@ -10,7 +10,7 @@ namespace BookRentalShop.Helper
     {
         public static string ConnString = "Data Source=127.0.0.1;" +
             "Initial Catalog=bookrentalshop;Persist Security Info=True;" +
-            "User ID=sa;Passowrd=mssql_p@ssw0rd!";
+            "User ID=sa;Password=mssql_p@ssw0rd!";
 
         public static string LoginUserId = string.Empty;
     }

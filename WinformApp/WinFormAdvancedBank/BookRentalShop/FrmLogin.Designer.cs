@@ -102,7 +102,7 @@ namespace BookRentalShop
             this.TxtPassword.CustomButton.Visible = false;
             this.TxtPassword.Lines = new string[0];
             this.TxtPassword.Location = new System.Drawing.Point(180, 96);
-            this.TxtPassword.MaxLength = 32767;
+            this.TxtPassword.MaxLength = 20;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '●';
             this.TxtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -155,6 +155,7 @@ namespace BookRentalShop
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "로그인";
+            this.Activated += new System.EventHandler(this.FrmLogin_Activated);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
