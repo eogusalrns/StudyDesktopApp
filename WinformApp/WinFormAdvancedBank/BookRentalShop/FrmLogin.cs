@@ -63,6 +63,7 @@ namespace BookRentalShop
                     //reader로 처리
                     reader.Read();
                     strUserId = reader["userID"] != null ? reader["userID"].ToString() : "";
+                    reader.Close();
                     //중간확인
                     //MessageBox.Show(strUserId);
                     if ( string.IsNullOrEmpty(strUserId))
@@ -72,6 +73,12 @@ namespace BookRentalShop
                     }
                     else
                     {
+                        var updateQuery = $@"UPDATE membertbl SET
+                                                lastLoginDt = GETDATE()
+                                               ,loginIpAddr = '{Helper.Common.GetLocalIp()}'
+                                             WHERE userID= '{strUserId}' ";//로그인정보 남기기
+                        cmd.CommandText = updateQuery;
+                        cmd.ExecuteNonQuery();
                         MetroMessageBox.Show(this, "접속성공", "로그인성공", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }

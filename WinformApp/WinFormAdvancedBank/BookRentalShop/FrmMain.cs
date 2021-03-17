@@ -65,5 +65,17 @@ namespace BookRentalShop
                 e.Cancel = true;//프로그램 종료 안함
             }
         }
+
+        private void MnuMember_Click_1(object sender, EventArgs e)
+        {
+            FrmMember frm = new FrmMember();
+            frm.Dock = DockStyle.Fill;
+            frm.MdiParent = this;//FrmMain
+            frm.Show();
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Width = this.ClientSize.Width - 10;
+            frm.Height = this.Height - menuStrip1.Height;
+            frm.WindowState = FormWindowState.Maximized;
+        }
     }
 }
