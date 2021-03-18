@@ -6,8 +6,6 @@ namespace test
     {
         static void Main(string[] args)
         {
-            char x = Console.ReadLine().;
-            Console.WriteLine(x);
         }
     }
 }

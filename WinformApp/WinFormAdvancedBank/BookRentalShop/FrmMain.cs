@@ -81,7 +81,8 @@ namespace BookRentalShop
 
         private void MnuRental_Click(object sender, EventArgs e)
         {
-
+            FrmRental frm = new FrmRental();
+            InitChildForm(frm, "대여 관리");
         }
 
         private void MnuBooks_Click(object sender, EventArgs e)
