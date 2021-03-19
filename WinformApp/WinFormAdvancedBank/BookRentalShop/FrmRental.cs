@@ -122,8 +122,8 @@ namespace BookRentalShop
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
 
-                    var query = "DELETE FROM [dbo].[bookstbl] " +
-                                " WHERE[Idx] = @Idx";
+                    var query = @"DELETE FROM [dbo].[bookstbl]
+                                   WHERE [Idx] = @Idx";
                     cmd.CommandText = query;
 
 
@@ -183,9 +183,11 @@ namespace BookRentalShop
                     else//update
                     {
                         query = @"UPDATE [dbo].[rentaltbl]
-                                              ,[returnDate] = GetDate()
+                                           SET [returnDate] = CASE @rentalState
+							                                       WHEN 'T' THEN GETDATE()
+							                                       WHEN 'R' THEN NULL END
                                               ,[rentalState] = @rentalState
-                                         WHERE Idx = @Idx";
+                                   WHERE Idx = @Idx";
                     }
 
                     cmd.CommandText = query;
@@ -204,12 +206,16 @@ namespace BookRentalShop
                         prentalDate.Value = DtpRentalDate.Value;
                         cmd.Parameters.Add(prentalDate);
 
-                        var prentalState = new SqlParameter("@rentalState", SqlDbType.Date);
+                        var prentalState = new SqlParameter("@rentalState", SqlDbType.Char,1);
                         prentalState.Value = CboRentalState.SelectedValue;
                         cmd.Parameters.Add(prentalState);
                     }
                     else//업데이트할때
                     {
+                        var pRentalState = new SqlParameter("@rentalState", SqlDbType.Char,1);
+                        pRentalState.Value = CboRentalState.SelectedValue;
+                        cmd.Parameters.Add(pRentalState);
+
                         var pIdx = new SqlParameter("@Idx", SqlDbType.Int);
                         pIdx.Value = TxtIdx.Text;
                         cmd.Parameters.Add(pIdx);
@@ -265,10 +271,10 @@ namespace BookRentalShop
                                         on r.bookIdx = b.idx"; // 210318 Descriptions 추가
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataSet ds = new DataSet();
-                    adapter.Fill(ds, "bookstbl");
+                    adapter.Fill(ds, "rentaltbl");
 
                     DgvData.DataSource = ds;
-                    DgvData.DataMember = "bookstbl";
+                    DgvData.DataMember = "rentaltbl";
                 }
             }
             catch (Exception ex)

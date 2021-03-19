@@ -33,5 +33,13 @@ namespace BookRentalShop.Helper
             }
             return localIP;
         }
+        internal static string ReplaceCmdText(string strSource)
+        {
+            var result = strSource.Replace("'", "’＇");
+            result = result.Replace("--", "");
+            result = result.Replace(";", "");
+
+            return result;
+        }
     }
 }
