@@ -16,7 +16,8 @@ GUI를 표현하는데 Winform보다 높은 성능을 제공
 
 - SQL 연결해서 작업할때 DML문 테이블 스크립팅 활용 (직접 타이핑할 필요없고, 오타 방지) 생산성 및 정확도 향상
 
-- Nuget에서 패키지 다운받아 폼 꾸미기 세련됨
+- NuGet에서 패키지 다운받아 폼 꾸미기 세련됨 ex) MetroModernUI![MetroModernUI](https://user-images.githubusercontent.com/54261552/111722086-7d1d0500-88a4-11eb-9346-e7cb6751598b.png)
+
 
 - try catch 문 예외 처리기
 - 
