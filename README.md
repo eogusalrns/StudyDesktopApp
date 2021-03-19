@@ -19,7 +19,7 @@ GUI를 표현하는데 Winform보다 높은 성능을 제공
 - NuGet에서 패키지 다운받아 폼 꾸미기 세련됨 ex) MetroModernUI![MetroModernUI](https://user-images.githubusercontent.com/54261552/111722086-7d1d0500-88a4-11eb-9346-e7cb6751598b.png)
 
 
-- try catch 문 예외 처리기
+- try catch 문 예외 처리기 (스레드 단위로 한번만)
 - 
 ## SQL Injection 방지법
 -특수문자를 못쓰게한다(필터링 메서드로 Replace시킨다) ex) .replace("--","");
