@@ -8,25 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Ellipse Fill="CornflowerBlue" Margin="226,107,255,139" Stroke="Black" StrokeThickness="10" RenderTransformOrigin="0.5,0.5">
-            <Ellipse.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="315"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Ellipse.RenderTransform>
-        </Ellipse>
-        <Ellipse Fill="CornflowerBlue" Margin="226,105,255,141" Stroke="Black" StrokeThickness="10" RenderTransformOrigin="0.5,0.5">
-            <Ellipse.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="405"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Ellipse.RenderTransform>
-        </Ellipse>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Visible" Source="/WpfPracticeApp;component/MainMenu.xaml"/>
     </Grid>
 </mah:MetroWindow>
