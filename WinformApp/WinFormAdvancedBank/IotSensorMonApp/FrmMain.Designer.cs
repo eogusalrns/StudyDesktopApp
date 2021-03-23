@@ -34,6 +34,14 @@ namespace IotSensorMonApp
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuLoadFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuSaveFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.시뮬레이션SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuStartSimul = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuEndSimul = new System.Windows.Forms.ToolStripMenuItem();
             this.ChtPhotoResistors = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.BtnCon = new System.Windows.Forms.Button();
             this.BtnDiscon = new System.Windows.Forms.Button();
@@ -42,19 +50,11 @@ namespace IotSensorMonApp
             this.BtnZoom = new System.Windows.Forms.Button();
             this.LsbPhotoResistors = new System.Windows.Forms.ListBox();
             this.PrbPhotoResistor = new System.Windows.Forms.ProgressBar();
-            this.파일FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuLoadFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuSaveFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.시뮬레이션SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuStartSimul = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuEndSimul = new System.Windows.Forms.ToolStripMenuItem();
             this.LblConnectTime = new System.Windows.Forms.Label();
             this.TxtSensorNumber = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.CmbSerialPort = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
@@ -73,6 +73,64 @@ namespace IotSensorMonApp
             this.menuStrip1.Size = new System.Drawing.Size(484, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 파일FToolStripMenuItem
+            // 
+            this.파일FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuLoadFile,
+            this.MnuSaveFile,
+            this.toolStripSeparator1,
+            this.MnuExit});
+            this.파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
+            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.파일FToolStripMenuItem.Text = "파일(&F)";
+            // 
+            // MnuLoadFile
+            // 
+            this.MnuLoadFile.Name = "MnuLoadFile";
+            this.MnuLoadFile.Size = new System.Drawing.Size(139, 22);
+            this.MnuLoadFile.Text = "읽어오기(&O)";
+            // 
+            // MnuSaveFile
+            // 
+            this.MnuSaveFile.Name = "MnuSaveFile";
+            this.MnuSaveFile.Size = new System.Drawing.Size(139, 22);
+            this.MnuSaveFile.Text = "저장하기(&S)";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
+            // 
+            // MnuExit
+            // 
+            this.MnuExit.Name = "MnuExit";
+            this.MnuExit.Size = new System.Drawing.Size(139, 22);
+            this.MnuExit.Text = "종료(&X)";
+            this.MnuExit.Click += new System.EventHandler(this.MnuExit_Click);
+            // 
+            // 시뮬레이션SToolStripMenuItem
+            // 
+            this.시뮬레이션SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuStartSimul,
+            this.MnuEndSimul});
+            this.시뮬레이션SToolStripMenuItem.Name = "시뮬레이션SToolStripMenuItem";
+            this.시뮬레이션SToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.시뮬레이션SToolStripMenuItem.Text = "시뮬레이션(&S)";
+            // 
+            // MnuStartSimul
+            // 
+            this.MnuStartSimul.Name = "MnuStartSimul";
+            this.MnuStartSimul.Size = new System.Drawing.Size(180, 22);
+            this.MnuStartSimul.Text = "시작(&B)";
+            this.MnuStartSimul.Click += new System.EventHandler(this.MnuStartSimul_Click);
+            // 
+            // MnuEndSimul
+            // 
+            this.MnuEndSimul.Name = "MnuEndSimul";
+            this.MnuEndSimul.Size = new System.Drawing.Size(180, 22);
+            this.MnuEndSimul.Text = "끝(&E)";
+            this.MnuEndSimul.Click += new System.EventHandler(this.MnuEndSimul_Click);
             // 
             // ChtPhotoResistors
             // 
@@ -162,59 +220,6 @@ namespace IotSensorMonApp
             this.PrbPhotoResistor.Size = new System.Drawing.Size(337, 23);
             this.PrbPhotoResistor.TabIndex = 8;
             // 
-            // 파일FToolStripMenuItem
-            // 
-            this.파일FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuLoadFile,
-            this.MnuSaveFile,
-            this.toolStripSeparator1,
-            this.MnuExit});
-            this.파일FToolStripMenuItem.Name = "파일FToolStripMenuItem";
-            this.파일FToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.파일FToolStripMenuItem.Text = "파일(&F)";
-            // 
-            // MnuLoadFile
-            // 
-            this.MnuLoadFile.Name = "MnuLoadFile";
-            this.MnuLoadFile.Size = new System.Drawing.Size(180, 22);
-            this.MnuLoadFile.Text = "읽어오기(&O)";
-            // 
-            // MnuSaveFile
-            // 
-            this.MnuSaveFile.Name = "MnuSaveFile";
-            this.MnuSaveFile.Size = new System.Drawing.Size(180, 22);
-            this.MnuSaveFile.Text = "저장하기(&S)";
-            // 
-            // MnuExit
-            // 
-            this.MnuExit.Name = "MnuExit";
-            this.MnuExit.Size = new System.Drawing.Size(180, 22);
-            this.MnuExit.Text = "종료(&X)";
-            this.MnuExit.Click += new System.EventHandler(this.MnuExit_Click);
-            // 
-            // 시뮬레이션SToolStripMenuItem
-            // 
-            this.시뮬레이션SToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuStartSimul,
-            this.MnuEndSimul});
-            this.시뮬레이션SToolStripMenuItem.Name = "시뮬레이션SToolStripMenuItem";
-            this.시뮬레이션SToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.시뮬레이션SToolStripMenuItem.Text = "시뮬레이션(&S)";
-            // 
-            // MnuStartSimul
-            // 
-            this.MnuStartSimul.Name = "MnuStartSimul";
-            this.MnuStartSimul.Size = new System.Drawing.Size(180, 22);
-            this.MnuStartSimul.Text = "시작(&B)";
-            this.MnuStartSimul.Click += new System.EventHandler(this.MnuStartSimul_Click);
-            // 
-            // MnuEndSimul
-            // 
-            this.MnuEndSimul.Name = "MnuEndSimul";
-            this.MnuEndSimul.Size = new System.Drawing.Size(180, 22);
-            this.MnuEndSimul.Text = "끝(&E)";
-            this.MnuEndSimul.Click += new System.EventHandler(this.MnuEndSimul_Click);
-            // 
             // LblConnectTime
             // 
             this.LblConnectTime.AutoSize = true;
@@ -246,10 +251,14 @@ namespace IotSensorMonApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PhotoResistor";
             // 
-            // toolStripSeparator1
+            // label3
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(310, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "1023";
             // 
             // label2
             // 
@@ -259,15 +268,6 @@ namespace IotSensorMonApp
             this.label2.Size = new System.Drawing.Size(14, 15);
             this.label2.TabIndex = 12;
             this.label2.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(310, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 15);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "1023";
             // 
             // groupBox2
             // 

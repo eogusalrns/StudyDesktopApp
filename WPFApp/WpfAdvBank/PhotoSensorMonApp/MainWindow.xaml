@@ -1,0 +1,81 @@
+﻿<mah:MetroWindow x:Class="PhotoSensorMonApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
+    xmlns:local="clr-namespace:PhotoSensorMonApp"
+    xmlns:oxy="http://oxyplot.org/wpf"
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"                 
+    mc:Ignorable="d"
+    Title="PhotoSensor Monitoring" Height="450" Width="800" Initialized="Window_Initialized">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem x:Name="MnuMonitor" Header="모니터링(_M)">
+                <MenuItem.Icon>
+                    <iconPacks:PackIconMaterial Kind="Monitor" Width="14"/>
+                </MenuItem.Icon>
+                <MenuItem x:Name="MnuStart" Header="시작(_B)" Click="MnuStart_Click">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconMaterial Kind="PlayCircle" Width="14"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="MnuExit" Header="종료(_S)" Click="MnuExit_Click">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconMaterial Kind="StopCircle" Width="14"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="프로그램종료(_X)" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <iconPacks:PackIconMaterial Kind="ExitRun" Width="14"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="히스토리(_H)">
+                <MenuItem.Icon>
+                    <iconPacks:PackIconMaterial Kind="ChartLine" Width="14"/>
+                </MenuItem.Icon>
+                <MenuItem x:Name="MnuLoad" Header="가져오기" Click="MnuLoad_Click"></MenuItem>
+                <MenuItem Header="테스트"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Grid Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="GrdRealTime" Grid.Row="0" Grid.Column="0" Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="9*"/>
+                </Grid.RowDefinitions>
+                <Label Content="RealTime Monitoring"/>
+                <lvc:AngularGauge Value="{Binding}"  Grid.Row="1" FromValue="0" ToValue="1023" TicksForeground="Black"
+                                  TicksStep="100"
+                                  Foreground="AntiqueWhite" FontWeight="Bold" FontSize="16" SectionsInnerRadius="0.6">
+                    <lvc:AngularGauge.Sections>
+                        <lvc:AngularSection FromValue="0" ToValue="700" Fill="BurlyWood"/>
+                        <lvc:AngularSection FromValue="700" ToValue="1023" Fill="Black"/>
+                    </lvc:AngularGauge.Sections>
+                </lvc:AngularGauge>
+            </Grid>
+            <Grid x:Name="GrdHistory" Grid.Row="0" Grid.Column="1" Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="9*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Sensoring History"/>
+                <oxy:Plot Grid.Row="1" Grid.Column="0">
+                    <oxy:Plot.Series>
+                        <oxy:LineSeries x:Name="HistoryValues" Color="DarkBlue" MarkerType="None"
+                                        Title="PhotoSensor" RenderOptions.EdgeMode="Unspecified"/>
+                    </oxy:Plot.Series>
+                </oxy:Plot>
+                <!--<d3:Chart BottomTitle="Arg" LeftTitle="Funct"></d3:Chart>-->
+            </Grid>
+        </Grid>
+    </DockPanel>
+</mah:MetroWindow>
