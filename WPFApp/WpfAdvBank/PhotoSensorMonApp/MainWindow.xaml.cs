@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using System.Windows;
 using System.Windows.Threading;
 
 namespace PhotoSensorMonApp
@@ -117,7 +118,8 @@ namespace PhotoSensorMonApp
 
         private void MnuExit_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
+            Application.Current.Shutdown(0);
         }
 
         private void MnuLoad_Click(object sender, System.Windows.RoutedEventArgs e)
